@@ -6,7 +6,7 @@
 Summary:	A DNSBL and RHSBL enabled module for apache 2.x
 Name:		apache-%{mod_name}
 Version:	0.91
-Release:	%mkrel 3
+Release:	%mkrel 4
 Group:		System/Servers
 License:	Apache License
 URL:		https://svn.apache.org/repos/asf/httpd/mod_smtpd/trunk/mod_dnsbl_lookup/
@@ -57,9 +57,6 @@ install -d %{buildroot}%{_includedir}
 install -m0755 .libs/*.so %{buildroot}%{_libdir}/apache-extramodules/
 bzcat %{SOURCE1} > %{buildroot}%{_sysconfdir}/httpd/modules.d/%{mod_conf}
 
-install -d %{buildroot}%{_var}/www/html/addon-modules
-ln -s ../../../..%{_docdir}/%{name}-%{version} %{buildroot}%{_var}/www/html/addon-modules/%{name}-%{version}
-
 install -m0644 dnsbl_lookup.h %{buildroot}%{_includedir}/
 
 %post
@@ -82,10 +79,7 @@ fi
 %doc README
 %attr(0644,root,root) %config(noreplace) %{_sysconfdir}/httpd/modules.d/%{mod_conf}
 %attr(0755,root,root) %{_libdir}/apache-extramodules/%{mod_so}
-%{_var}/www/html/addon-modules/*
 
 %files devel
 %defattr(-,root,root)
 %{_includedir}/*.h
-
-
