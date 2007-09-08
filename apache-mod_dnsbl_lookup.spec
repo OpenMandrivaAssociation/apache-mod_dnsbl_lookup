@@ -6,7 +6,7 @@
 Summary:	A DNSBL and RHSBL enabled module for apache 2.x
 Name:		apache-%{mod_name}
 Version:	0.91
-Release:	%mkrel 4
+Release:	%mkrel 5
 Group:		System/Servers
 License:	Apache License
 URL:		https://svn.apache.org/repos/asf/httpd/mod_smtpd/trunk/mod_dnsbl_lookup/
