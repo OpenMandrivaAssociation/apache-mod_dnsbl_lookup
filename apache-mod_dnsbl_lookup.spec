@@ -22,6 +22,7 @@ Requires:	apache-mod_smtpd
 BuildRequires:	apache-devel >= 2.0.55
 BuildRequires:	file
 Epoch:		1
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 mod_dnsbl_lookup aims to provide generic and flexible DNSBL and RHSBL 
